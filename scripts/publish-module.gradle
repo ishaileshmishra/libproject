@@ -4,8 +4,8 @@ apply plugin: 'signing'
 
 ext {
     PUBLISH_GROUP_ID = 'io.github.ishaileshmishra'
-    PUBLISH_ARTIFACT_ID = 'android'
-    PUBLISH_VERSION = '0.2.0'
+    PUBLISH_ARTIFACT_ID = 'libproject'
+    PUBLISH_VERSION = '0.3.0'
     POM_NAME = 'libproject'
     WEBSITE = 'http://www.shaileshmishra.in'
     PUBLISH_DESCRIPTION = 'Use Pexels Account and deliver it to your web or mobile properties.'
@@ -38,7 +38,7 @@ afterEvaluate {
     publishing {
         repositories {
             maven {
-                url 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+                url 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
                 credentials {
                     username = project.findProperty("OSSRHUSERNAME") ?: { { secrets.OSSRHUSERNAME } }
                     password = project.findProperty("OSSRHPASSWORD") ?: { { secrets.OSSRHPASSWORD } }
