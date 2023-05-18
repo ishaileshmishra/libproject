@@ -5,7 +5,7 @@ apply plugin: 'signing'
 ext {
     PUBLISH_GROUP_ID = 'io.github.ishaileshmishra'
     PUBLISH_ARTIFACT_ID = 'android'
-    PUBLISH_VERSION = '0.0.7'
+    PUBLISH_VERSION = '0.0.8'
     POM_NAME = 'libproject'
     WEBSITE = 'http://www.shaileshmishra.in'
     PUBLISH_DESCRIPTION = 'Use Pexels Account and deliver it to your web or mobile properties.'
@@ -47,6 +47,7 @@ afterEvaluate {
         }
         publications {
             mavenJava(MavenPublication) {
+                println("Components: " + components*.name)
                 from components.java
             }
         }
