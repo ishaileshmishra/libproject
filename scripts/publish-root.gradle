@@ -17,8 +17,8 @@ nexusPublishing {
     repositories {
         sonatype {
             stagingProfileId = sonatypeStagingProfileId
-            username = { { secrets.ossrhUsername } }
-            password = { { secrets.ossrhPassword } }
+            username = project.findProperty("MAVEN_USERNAME") ?: { { secrets.MAVEN_USERNAME } }
+            password = project.findProperty("MAVEN_PASSWORD") ?: { { secrets.MAVEN_PASSWORD } }
             nexusUrl.set(uri("https://oss.sonatype.org/service/local/"))
             snapshotRepositoryUrl.set(uri("https://oss.sonatype.org/content/repositories/snapshots/"))
             if (project.version.endsWith('-SNAPSHOT')) {
