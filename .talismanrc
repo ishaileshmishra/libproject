@@ -1,0 +1,20 @@
+threshold: medium
+fileignoreconfig:
+- filename: app/src/main/res/xml/backup_rules.xml
+  checksum: f301105c8a8ea151b3f18ed0a7c5d6e60eb9f2d07010daa12117b1fbe72e56a0
+- filename: app/src/main/java/io/github/ishaileshmishra/Client.kt
+  checksum: b5f9aa8b80a6698b8158e1f7aac6e83c936ce20c4d6213503a2e59ef86ba7160
+- filename: app/src/main/java/io/github/ishaileshmishra/Videos.kt
+  checksum: 1da4d992ebe445995e501abdf7907788cdbafea55b8470481320f5b570e4c8c5
+- filename: gradle.properties
+  checksum: b4cfc5c142ee8c58efa9e7e0917a249ea50269a25cfee77f920fc0278aae2535
+- filename: scripts/publish-module.gradle
+  checksum: 9734971d98c31325d68af610660e02ee51b3519c0a9517953b30b884e906d10b
+- filename: scripts/publish-root.gradle
+  checksum: a2b34f61146798ca13e76b58993edaaa40cb30dbbd6745f17dfc9b66cb7a886f
+- filename: app/src/main/java/io/github/ishaileshmishra/QueryParams.kt
+  checksum: 898be5fedfdc91ab43f3c6f78836c9985d28e2462416885a9ea4c22d96c14ff5
+- filename: app/src/test/java/io/github/ishaileshmishra/ExampleUnitTest.kt
+  checksum: 580a00d0cc470022985cb25b8dd9c3283dc3f50036edf5cf888604b562ab9a3e
+- filename: app/src/main/java/io/github/ishaileshmishra/Pexels.kt
+  checksum: 482b0840804704205474b41df66da83ef35005def35d66675888add31733fd9e
