@@ -1,30 +1,15 @@
-// Create variables with empty default values
-ext["signing.keyId"] = ''
-ext["signing.password"] = ''
-ext["signing.secretKeyRingFile"] = ''
-ext["ossrhUsername"] = ''
-ext["ossrhPassword"] = ''
-ext["sonatypeStagingProfileId"] = ''
-
-File secretPropsFile = project.rootProject.file('local.properties')
-if (secretPropsFile.exists()) {
-    Properties p = new Properties()
-    new FileInputStream(secretPropsFile).withCloseable { is -> p.load(is) }
-    p.each { name, value -> ext[name] = value }
-}
-
 nexusPublishing {
     repositories {
         sonatype {
-            stagingProfileId = sonatypeStagingProfileId
+            //stagingProfileId = sonatypeStagingProfileId
             username = project.findProperty("OSSRHUSERNAME") ?: { { secrets.OSSRHUSERNAME } }
             password = project.findProperty("OSSRHPASSWORD") ?: { { secrets.OSSRHPASSWORD } }
-            nexusUrl.set(uri("https://oss.sonatype.org/service/local/"))
-            snapshotRepositoryUrl.set(uri("https://oss.sonatype.org/content/repositories/snapshots/"))
+            nexusUrl.set(uri("https://s01.sonatype.org/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://s01.sonatype.org/content/repositories/snapshots/"))
             if (project.version.endsWith('-SNAPSHOT')) {
-                snapshotRepositoryUrl.set(uri("https://oss.sonatype.org/content/repositories/snapshots"))
+                snapshotRepositoryUrl.set(uri("https://s01.sonatype.org/content/repositories/snapshots"))
             } else {
-                nexusUrl.set(uri("https://oss.sonatype.org/service/local/"))
+                nexusUrl.set(uri("https://s01.sonatype.org/service/local/"))
             }
         }
     }
